@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		6E46B86FA74D28EE2A63B57D /* Pods_Tindog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228D5CF19723588F435D1599 /* Pods_Tindog.framework */; };
 		800A37AE209D12A700A66927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800A37AD209D12A700A66927 /* AppDelegate.swift */; };
-		800A37B0209D12A700A66927 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800A37AF209D12A700A66927 /* ViewController.swift */; };
 		800A37B3209D12A700A66927 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800A37B1209D12A700A66927 /* Main.storyboard */; };
 		800A37B5209D12AD00A66927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800A37B4209D12AD00A66927 /* Assets.xcassets */; };
 		800A37B8209D12AD00A66927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800A37B6209D12AD00A66927 /* LaunchScreen.storyboard */; };
+		808D337020A4AEE400040AFF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D336F20A4AEE400040AFF /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		228D5CF19723588F435D1599 /* Pods_Tindog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tindog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800A37AA209D12A700A66927 /* Tindog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tindog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		800A37AD209D12A700A66927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		800A37AF209D12A700A66927 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		800A37B2209D12A700A66927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		800A37B4209D12AD00A66927 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		800A37B7209D12AD00A66927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		800A37B9209D12AD00A66927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		808D336F20A4AEE400040AFF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B9CEBBA44FD49D2BE54EA20D /* Pods-Tindog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tindog/Pods-Tindog.release.xcconfig"; sourceTree = "<group>"; };
 		CC4268D229A00D82813F8897 /* Pods-Tindog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tindog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tindog/Pods-Tindog.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,14 +69,22 @@
 		800A37AC209D12A700A66927 /* Tindog */ = {
 			isa = PBXGroup;
 			children = (
+				808D336E20A4AE7B00040AFF /* Controllers */,
 				800A37AD209D12A700A66927 /* AppDelegate.swift */,
-				800A37AF209D12A700A66927 /* ViewController.swift */,
 				800A37B1209D12A700A66927 /* Main.storyboard */,
 				800A37B4209D12AD00A66927 /* Assets.xcassets */,
 				800A37B6209D12AD00A66927 /* LaunchScreen.storyboard */,
 				800A37B9209D12AD00A66927 /* Info.plist */,
 			);
 			path = Tindog;
+			sourceTree = "<group>";
+		};
+		808D336E20A4AE7B00040AFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				808D336F20A4AEE400040AFF /* HomeViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FAC05884673F96063DB83CF4 /* Pods */ = {
@@ -200,8 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				800A37B0209D12A700A66927 /* ViewController.swift in Sources */,
 				800A37AE209D12A700A66927 /* AppDelegate.swift in Sources */,
+				808D337020A4AEE400040AFF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,11 +357,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tindog/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.moises.tindog.Tindog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -365,11 +376,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tindog/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.moises.tindog.Tindog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
