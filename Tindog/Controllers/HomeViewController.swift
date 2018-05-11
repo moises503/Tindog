@@ -17,6 +17,7 @@ class NavigationImageView : UIImageView{
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var homeWrapper: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,19 @@ class HomeViewController: UIViewController {
     }
     
     @objc func cardDragged(gestureRecognizer: UIPanGestureRecognizer){
-        print("drag")
+        //print("Drag \(gestureRecognizer.translation(in: view))")
+        let cardPoint = gestureRecognizer.translation(in: view)
+        self.cardView.center = CGPoint(x: self.view.bounds.width / 2 + cardPoint.x, y: self.view.bounds.height / 2 + cardPoint.y)
+        if gestureRecognizer.state == .ended {
+            if(self.cardView.center.x < (self.view.bounds.width / 2 - 100)){
+                print("dislike")
+            }
+            if(self.cardView.center.x > (self.view.bounds.width / 2 + 100)){
+                print("like")
+            }
+            
+            self.cardView.center = CGPoint(x: self.homeWrapper.bounds.width / 2, y: (self.homeWrapper.bounds.height / 2 - 30))
+        }
     }
 
     override func didReceiveMemoryWarning() {
